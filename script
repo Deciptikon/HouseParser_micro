@@ -1,1 +1,18 @@
+const dataValue = document.querySelectorAll('span.value'); 
+const dataPrice = document.querySelectorAll('span.price'); 
+for (let i=0; i < dataValue.length; i++) {
+    let value = dataValue[i];
+    let price = dataPrice[i];
+    
+    let v = value.innerHTML.split(' ')[0];
+    let p = price.innerHTML.split(' ').join('');
+    let u = String((Number(p)/Number(v)).toFixed(0));
+    dataValue[i].innerHTML += ' | ' + u;
+    console.log(dataValue[i].innerHTML);
+}
 
+
+//ссылка и картинка
+const dataValue = document.querySelectorAll('div.main__catalog__wrap__list__item__img'); 
+console.log(dataValue[2].childNodes[1].href);
+console.log(dataValue[2].childNodes[1].childNodes[1].currentSrc);
